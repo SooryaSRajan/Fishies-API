@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 8000;
 
 const registerUser = require("./routes/register")
 const loginUser = require("./routes/login")
+const upload = require("./routes/upload_image")
 
 require("dotenv").config();
 require("./config/database_config")();
@@ -17,6 +18,7 @@ admin.initializeApp({
 app.use(Express.json());
 app.use("/register", registerUser);
 app.use("/login", loginUser);
+app.use("/upload", upload);
 
 // const {google} = require("googleapis");
 // const fs = require('fs')
